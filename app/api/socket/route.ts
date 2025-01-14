@@ -4,6 +4,8 @@ import { NextApiResponseServerIO } from '../../../types/next'
 import fs from 'fs'
 import path from 'path'
 
+export const dynamic = 'force-dynamic'
+
 const chatHistoryFile = path.join(process.cwd(), 'chatHistory.json')
 
 if (!fs.existsSync(chatHistoryFile)) {
@@ -49,11 +51,5 @@ export async function GET(req: NextApiRequest, res: NextApiResponseServerIO) {
 
   res.socket.server.io.emit('ping', new Date().toISOString())
   return new Response('Socket is running', { status: 200 })
-}
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
 }
 
