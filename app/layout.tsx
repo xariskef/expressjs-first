@@ -1,12 +1,11 @@
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin', 'greek'] })
 
-export const metadata: Metadata = {
-  title: 'Demo Home Page',
-  description: 'A demo home page created with Next.js and React',
+export const metadata = {
+  title: 'Zlack - Η νέα πλατφόρμα επικοινωνίας',
+  description: 'Ανακαλύψτε μια νέα εμπειρία επικοινωνίας με το Zlack',
 }
 
 export default function RootLayout({
